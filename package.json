@@ -1,5 +1,5 @@
 {
-    "name": "attempt",
+    "name": "attemptjs",
     "description": "This is a simple utility package",
     "author": "lucasamonrc",
     "license": "MIT",
@@ -16,7 +16,7 @@
         "javascript"
     ],
     "private": false,
-    "version": "0.0.0",
+    "version": "0.0.1",
     "type": "module",
     "main": "./dist/attempt.umd.cjs",
     "module": "./dist/attempt.js",
