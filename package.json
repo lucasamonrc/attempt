@@ -1,0 +1,30 @@
+{
+  "name": "attempt",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/attempt.umd.cjs",
+  "module": "./dist/attempt.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/attempt.js",
+      "require": "./dist/attempt.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vite-plugin-dts": "^3.7.3",
+    "vitest": "^1.3.1"
+  }
+}
