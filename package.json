@@ -16,7 +16,7 @@
         "javascript"
     ],
     "private": false,
-    "version": "0.1.0",
+    "version": "0.1.1",
     "type": "module",
     "main": "./dist/attempt.umd.cjs",
     "module": "./dist/attempt.js",
