@@ -1,6 +1,21 @@
 {
   "name": "attempt",
-  "private": true,
+  "description": "This is a simple utility package",
+  "author": "lucasamonrc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucasamonrc/attempt"
+  },
+  "bugs": {
+    "url": "https://github.com/lucasamonrc/attempt/issues"
+  },
+  "keywords": [
+    "promises",
+    "error handling",
+    "javascript"
+  ],
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "main": "./dist/attempt.umd.cjs",
