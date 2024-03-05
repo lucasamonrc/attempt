@@ -1,0 +1,44 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Fetch all history for all tags and branches
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+        registry-url: 'https://registry.npmjs.org/'
+
+    - name: Configure Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Update version in package.json
+      run: |
+        PACKAGE_VERSION=${GITHUB_REF#refs/tags/v}
+        npm version $PACKAGE_VERSION --no-git-tag-version
+        git commit -am "Update version to $PACKAGE_VERSION"
+        git push origin main
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build package
+      run: npm run build
+
+    - name: Publish to npm
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
