@@ -4,7 +4,7 @@ The Promise API in JavaScript is among the most important additions to the langu
 
 ## Install
 ```sh
-npm install attemptjs
+npm install @lucasamonrc/attemptjs
 ```
 
 ## API
